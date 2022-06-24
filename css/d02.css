@@ -1,0 +1,15 @@
+/* day la file khai bao cac css ap dung cho trang trong thu muc d02_css */
+
+.slogan{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.7rem;
+    color: darksalmon;
+    font-style: italic;
+    text-shadow: 2px 2px 2px gray;
+    padding-left: 1.2rem;
+}
+
+#logo{
+    width: 130px;
+    height: auto;
+}
