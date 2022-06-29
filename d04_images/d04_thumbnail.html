@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>foods</title>
+
+    <style>
+        #hinh>ul {
+            list-style-type: none;
+            width: 450px;
+        }
+
+        #hinh>ul>li {
+            display: inline;
+            float: left;
+            padding: 10px;
+        }
+
+        #hinh {
+            position: relative;
+        }
+
+        #hinh span {
+            position: absolute;
+            top: 10px;
+            left: 500px;
+            display: none;
+        }
+
+        #hinh li:hover span {
+            display: block;
+        }
+
+        *{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        a{
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h2>Foods Outlet</h2>
+        <hr>
+        <div id="hinh">
+            <!--  ul>li*4>img+span>img+p  -->
+            <ul>
+                <li><img src="../images/foods/small-image/Banh-Cuon-Small.png" alt="banh-cuon">
+                    <span>
+                        <img src="../images/foods/Banh-Cuon.png" alt="banh cuon">
+                        <p>Banh cuon cha lua <br>
+                            10$</p>
+                    </span>
+                </li>
+                <li><img src="../images/foods/small-image/Banh-Goi-Small.png" alt="banh-goi">
+                    <span>
+                        <img src="../images/foods/Banh-Goi.png" alt="banh goi">
+                        <p>Banh Goi nhan thit <br>
+                            5.9$</p>
+                    </span>
+                </li>
+                <li><img src="../images/foods/small-image/Banh-Mi-Small.png" alt="">
+                    <span>
+                        <img src="../images/foods/Banh-Mi.png" alt="">
+                        <p>Banh mi Saigon <br>
+                            5.99$</p>
+                    </span>
+                </li>
+                <li><img src="../images/foods/small-image/Banh-Xeo-Small.png" alt="banh xeo">
+                    <span>
+                        <img src="../images/foods/Banh-Xeo.png" alt="banh xeo">
+                        <p>Banh Xeo <br>
+                            6.49$</p>
+                    </span>
+                </li>
+            </ul>
+        </div>
+        <p style="clear: both;">
+            <a href="d04_index.html"> &lt;&lt; Back home</a>
+        </p>
+    </div>
+</body>
+
+</html>
