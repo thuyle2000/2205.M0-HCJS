@@ -11,19 +11,61 @@
             width: 200px;
             height: auto;
             border-radius: 50%;
-            transition: width 5s, height 5s, transform 5s ;
+            transition: width 5s, height 5s, transform 5s;
         }
 
-        img:hover{
+        img:hover {
             width: 350px;
             transform: rotate(360deg);
         }
 
-        a{
+        a {
             text-decoration: none;
         }
-        *{
+
+        * {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #ani {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 50%;
+            position: relative;
+            animation: xoay 4s linear 2s infinite alternate;
+        }
+
+        @keyframes xoay {
+            0% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+
+            25% {
+                background-color: yellow;
+                left: 200px;
+                top: 0px;
+            }
+
+            50% {
+                background-color: blue;
+                left: 200px;
+                top: 200px;
+            }
+
+            75% {
+                background-color: green;
+                left: 0px;
+                top: 200px;
+            }
+
+            100% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
         }
     </style>
 </head>
@@ -35,6 +77,10 @@
         <a href="d04_index.html"> &lt;&lt; Back home</a> <br><br>
         <div id="funny">
             <img src="../images/foods/small-image/Ca-Phe-Sua-Da-Small.png" alt="">
+        </div>
+
+        <br><br><br>
+        <div id="ani">
         </div>
     </div>
 </body>
