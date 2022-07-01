@@ -26,17 +26,17 @@ label{
 
 input[type="submit"]{
     background-color: red;
-    color: bisque;
+    color:aliceblue;
     border: thin solid lightcoral;
-    border-radius: 20px;
+    border-radius: 8px;
     padding: 3px 15px;
 }
 
 input[type="reset"]{
-    background-color: lightseagreen;
-    color: bisque;
+    background-color: rgb(32, 178, 88);
+    color: aliceblue;
     border: thin solid lightblue;
-    border-radius: 10px;
+    border-radius: 8px;
     padding: 3px 15px;
 }
 

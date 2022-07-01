@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>datalist</title>
+    <link rel="stylesheet" href="../css/form.css">
+</head>
+<body>
+    <h2>HTML5 Datalist demo</h2>
+    <hr>
+
+    <form action="">
+        <fieldset>
+            <legend>Danh sach sinh vien</legend>
+
+            <!-- combo box -->
+            <select name="ds1" id="ds1">
+                <option value="sv1">Nguyen Phuoc Thinh</option>
+                <option value="sv2">Nguyen Phuc Bao</option>
+                <option value="sv3">Le Viet Dung</option>
+                <option value="sv4">Tran Nguyen Viet </option>
+                <option value="sv5">Pham Tuan Anh</option>
+                <option value="sv6">Mai Thuy Tien</option>
+            </select>
+
+            <!-- datalist -->
+            <input name="ds2" id="ds2" list="bangten" style="border: solid thin grey;">
+            <datalist id="bangten">
+                <option value="Nguyen Phuoc Thinh" >
+                <option value="Nguyen Phuc Bao" >
+                <option value="Le Viet Dung">
+                <option value="Tran Nguyen Viet">
+                <option value="Pham Tuan Anh">
+                <option value="Mai Thuy Tien">
+            </datalist>
+
+        </fieldset>
+    </form>
+
+</body>
+</html>
