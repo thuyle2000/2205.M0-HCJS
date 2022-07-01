@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table</title>
+    <link rel="stylesheet" href="../css/d05_table.css">
+</head>
+
+<body>
+    <h2>Danh sach sinh vien - version 2</h2>
+    <hr>
+    <table  >
+        <!-- tieu de cua bang -->
+        <caption>Lop T1.2205.M0</caption>
+        
+        <!-- vung tieu de -->
+        <thead>
+            <tr class="tieude">
+                <th>So TT</th>
+                <th>Ho ten</th>
+                <th>Email</th>
+                <th>Nam sinh</th>
+            </tr>
+        </thead>
+
+        <!-- vung noi dung chinh cua bang -->
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Nguyen Luu Gia Bao</td>
+                <td>giabao@fpt.edu.vn</td>
+                <td>2002</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Pham Nguyen Phuoc Thinh</td>
+                <td>phuocthinh@fpt.edu.vn</td>
+                <td>2002</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Nguyen Huu Phuoc</td>
+                <td>phuoc@gmail.com</td>
+                <td>2003</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Nguyen Le Tien Dung</td>
+                <td>dung@fpt.edu.vn</td>
+                <td>2003</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Pham Vuong Quoc Vinh</td>
+                <td>quocvinh@fpt.edu.vn</td>
+                <td>2003</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Ho Thanh Vien</td>
+                <td>vien@gmail.com</td>
+                <td>2004</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Nguyen Hoang Duc</td>
+                <td>duc@gmail.com</td>
+                <td>2004</td>
+            </tr>
+        </tbody>
+
+        <!-- vung tieu de chan -->
+        <tfoot>
+            <tr>
+                <td colspan="2" rowspan="4"
+                class="tongket">
+                    Tong ket so luong sinh vien
+                </td>
+                <th colspan="2">Theo nam sinh</th>
+            </tr>
+            <tr>
+                <td>2002</td>
+                <td class="soluong">2</td>
+            </tr>
+            <tr>
+                <td>2003</td>
+                <td class="soluong">3</td>
+            </tr>
+            <tr>
+                <td>2004</td>
+                <td class="soluong">2</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+/* css cho cac cau truc bang */
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+caption {
+    font-size: larger;
+    color: cadetblue;
+    font-weight: bold;
+    text-shadow: 2px 2px 2px lavender;
+    margin-bottom: .8rem;
+}
+
+.tieude {
+    color: red;
+}
+
+td {
+    padding: 5px 20px 5px 20px;
+    border: solid thin gainsboro;
+}
+
+tbody td:nth-child(4) {
+    text-align: center;
+}
+
+tfoot td:first-child{
+    text-align: center;
+}
+
+.soluong{
+    color: orangered;
+    text-align: center;
+    font-weight: bold;
+}
+
+table {
+    border: solid thin green !important;
+    box-shadow: 3px 3px 2px gray;
+}
+
+th{
+    background-color: antiquewhite;
+}
+
+.tongket{
+    color: darkgreen;
+    font-weight: bold;
+    font-size: 1.05rem;
+    background-color: lightcyan;
+}
