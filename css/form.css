@@ -1,0 +1,52 @@
+/* khai bao css cho form html5 */
+form{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 10px;
+    width: fit-content;
+    box-shadow: 3px 3px 3px gainsboro;
+}
+
+fieldset{
+    border: solid thin green;
+}
+
+legend{
+    font-weight: bold;
+    color: darkorange;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+form div{
+    margin: 10px 5px;
+}
+label{
+    display: inline-block;
+    width: 90px;
+    color: darkblue;
+}
+
+input[type="submit"]{
+    background-color: red;
+    color: bisque;
+    border: thin solid lightcoral;
+    border-radius: 20px;
+    padding: 3px 15px;
+}
+
+input[type="reset"]{
+    background-color: lightseagreen;
+    color: bisque;
+    border: thin solid lightblue;
+    border-radius: 10px;
+    padding: 3px 15px;
+}
+
+input{
+    border: none;
+}
+input:required:invalid{
+    border-bottom: double red 2px;
+}
+
+input:required:valid{
+    background-color: bisque;
+}
