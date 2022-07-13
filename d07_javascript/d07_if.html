@@ -16,7 +16,7 @@
     <h2>Javascript IF Statement</h2>
     <hr>
 
-    <form action="">
+    <form action="" name="formHD" id="formHD">
         <div>
             <label for="">chon san pham</label>
             <select name="sp" id="sp">
@@ -30,21 +30,59 @@
 
         <div>
             <label for="">so luong</label>
-            <input type="number" name="soLuong" id="soLuong" value="1" required>
+            <input type="number" name="soLuong" id="soLuong" min="1" value="1" required>
         </div>
 
         <div>
             <label for="">don gia</label>
-            <input type="text" name="donGia" id="donGia" value="0" required>
+            <input type="text" name="donGia" id="donGia" value="3.99" required>
         </div>
 
         <hr>
         <p id="tong"></p>
-        
+
         <div>
             <button type="submit">Submit</button>
             <button type="reset">Reset</button>
         </div>
     </form>
+
+    <script>
+        // lap trinh cho su kien submit form co id='formHD'
+        document.getElementById('formHD').onsubmit = function(event){
+            event.preventDefault(); //huy chuc nang submit form
+
+            // lay gia tri nhap trong o don gia
+            let dg = document.getElementById("donGia").value;
+
+            // kiem tra dg co phai la day so ko ?
+            if(isNaN(dg)){
+                alert(' Don gia phai la chuoi so ! Vui long nhap lai !');
+                document.getElementById("donGia").focus();
+                return;
+            }
+
+            //kiem tra dg co phai la so am ko ?
+            dg = parseFloat(dg); //doi dg -> kieu float
+            if(dg<0){
+                alert(' Don gia phai >=0 ! Vui long nhap lai !');
+                document.getElementById("donGia").focus();
+                return;
+            }
+
+
+            //lay gia tri nhap trong o so luong
+            let sl = document.getElementById("soLuong").value;
+
+            //tinh thanh tien
+            let thanh_tien = sl*dg;
+
+            //dua gia tri cua thanh tien vo nut p co id="tong"
+            document.getElementById("tong").innerHTML="<b>Tong cong : </b> " + thanh_tien;
+
+
+        }
+
+    </script>
 </body>
 </html>
