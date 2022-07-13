@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>build-in function</title>
+</head>
+
+<body>
+    <h2>Javascript Build-in Function</h2>
+    <hr>
+    <input type="button" value="alert" onclick="fn_alert();"> <br>
+    <input type="button" value="confirm close window" onclick="fn_confirm('Are u sure ?')"> <br>
+    <p >
+        <input type="button" value="prompt & eval" onclick="fn_prompt_eval();">
+        <span id="result"></span>
+    </p>
+
+    <!-- lap trinh ma kich ban javascript cho cac su kien click tren cac button  -->
+    <script>
+        function fn_alert() {
+            alert("Click Me Again !"); //ham hien hop thoai thong bao tren man hinh
+        }
+
+        function fn_confirm(message) {
+            var ans = confirm(message); //ham hien ra hop thong bao de xac nhan 1 hanh dong yes/no (ok/cancel)
+
+            if (ans == true) {
+                window.close(); //neu user bam nut OK tren hoi thoai -> dong tab man hinh trinh duyet
+            }
+        }
+
+        function fn_prompt_eval() {
+            var ex = prompt("input expression: ", "10+32"); //ham hien ra hop thoai nhap lieu
+            var r = eval(ex); //ham uoc luong gia tri cua bieu thuc ex, va bien r se chua ket qua
+
+            //dua ket qua cua bieu thuc r vo the span co id='result'
+            // document.getElementById("result").innerText = ("<b>"+ ex + ' = ' + r+"</b>");
+            document.getElementById("result").innerHTML = ("<b>"+ ex + ' = ' + r+"</b>");
+        }
+
+
+
+    </script>
+</body>
+
+</html>
