@@ -15,19 +15,18 @@
         <h2>HTML5 Form Demo</h2>
         <hr>
 
-        <form action="d07_jquery.html">
+        <form action="d07_jquery.html" name="formLOGIN" id="formLOGIN">
             <fieldset>
                 <legend>Login</legend>
                 <div>
                     <label for="">username: </label>
-                    <input type="text" name="user" id="user" required autofocus
-                    placeholder="nhap username" >
+                    <input type="text" name="user" id="user" required autofocus placeholder="nhap username">
                 </div>
 
                 <div>
                     <label for="">password:</label>
-                    <input type="password" name="pass" id="pass" required placeholder="nhap mat khau [Pxxx]" 
-                    pattern="P\d{3}">
+                    <input type="password" name="pass" id="pass" required placeholder="nhap mat khau [Pxxx]"
+                        pattern="P\d{3}">
                 </div>
 
                 <input type="submit" value="Get Go !">
@@ -36,6 +35,43 @@
         </form>
 
     </div>
+
+    <script>
+        //lap trinh cho su kien submit form login
+        document.getElementById("formLOGIN").onsubmit= function(){
+            //lay gia tri nhap trong o username
+            let uid = document.getElementById("user").value.trim(); // "  abc " -> "abc"
+
+            if(uid.length == 0){
+                alert("username ko duoc de trong, vui long nhap lai !");
+                document.getElementById("user").focus();
+                return false;   //tat chuc nang submit: ko chuyen trang action (d07_jquery.html)
+            }
+
+            //lay gia tri nhap trong o password
+            let pwd = document.getElementById("pass").value.trim();
+
+
+            //kiem tra tai khoan dang nhap co hop le ko
+            if(uid =="admin" || uid=="aptech"){
+                if(pwd=="P123" || pwd=="P001"||pwd=="P000"){
+                    return;
+                }
+                else{
+                    alert("Mat khau khong dung, vui long nhap lai !!!");
+                    document.getElementById("pass").focus();
+                    return false;
+                }
+            }
+            else{
+                alert("Username khong dung, vui long nhap lai !!!");
+                document.getElementById("user").focus();
+                return false;   //tat chuc nang submit: ko chuyen trang action (d07_jquery.html)
+            }
+
+        };
+
+    </script>
 </body>
 
 </html>
