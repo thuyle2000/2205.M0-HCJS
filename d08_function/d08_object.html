@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function-object</title>
+    <link rel="stylesheet" href="../css/form.css">
+</head>
+<body>
+    <h2>Function Object Demo</h2>
+    <hr>
+
+    <h4>Hinh Chu Nhat</h4>
+    <form action="">
+        <div>
+            <label for="">Nhap chieu rong</label>
+            <input type="number" name="rong" id="rong" value="12">
+        </div>
+        <div>
+            <label for="">Nhap chieu cao</label>
+            <input type="number" name="cao" id="cao" value="4">
+        </div>
+        <div>
+            <input type="button" value="Tinh toan" id="btnOK" name="btnOK">
+        </div>
+
+        <div>
+            <label for="">Dien tich</label>
+            <input type="number" name="dt" id="dt" readonly>
+        </div>
+        <div>
+            <label for="">Chu vi</label>
+            <input type="number" name="cv" id="cv" readonly>
+        </div>
+    </form>
+
+    <script>
+        //1. dinh nghia template object (mau doi tuong) hinh chu nhat
+        function Rectangle(width, height){
+            //dinh nghia thuoc tinh rong (w) va cao (h) cua HCN
+            this.h = height;
+            this.w = width;
+
+            //dinh nghia phuong thuc tinh chu vi HCN
+            this.peripheral = function(){
+                let chuvi = (this.w + this.h)*2;
+                return chuvi;
+            }
+
+            //dinh nghia phuong thuc tinh dien tich HCN
+            this.area = function(){
+                return (this.h * this.w);
+            }            
+
+        }
+
+
+        //2. lap trinh cho su kien click nut co id=[btnOK]
+        document.getElementById("btnOK").onclick = function(){
+            //1. lay gia tri nhap trong 2 o chieu rong va chieu cao
+            let r = parseInt(document.getElementById("rong").value);
+            let c = parseInt(document.getElementById("cao").value);
+
+            //2. tao doi tuong hcn tu mau Rectangle
+            let hcn = new Rectangle(r,c);
+            let dt = hcn.area();
+            
+            document.getElementById("dt").value = dt;
+            document.getElementById("cv").value = hcn.peripheral();
+        }
+    </script>
+</body>
+</html>

@@ -26,7 +26,7 @@ label{
     color: darkblue;
 }
 
-input[type="submit"], button[type="submit"]{
+input[type="submit"], button[type="submit"], input[type="button"]{
     background-color: red;
     color:aliceblue;
     border: thin solid lightcoral;
