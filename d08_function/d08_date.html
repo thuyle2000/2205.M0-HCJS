@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js-date</title>
+    <link rel="stylesheet" href="../css/form.css">
+</head>
+
+<body>
+    <h2>JS Date Demo</h2>
+    <hr>
+
+    <form action="">
+        <div>
+            <label for="">nhap ngay sinh</label>
+            <!-- ngay sinh default: 08 thang 05, nam 2004  -->
+            <input type="date" name="ns" id="ns" value="2004-05-08">
+        </div>
+        <div>
+            <input type="button" value="Click Me" id="btnOK">
+        </div>
+    </form>
+
+    <script>
+        //lap trinh cho su kien click len nut co id=[btnOK]
+        document.getElementById("btnOK").onclick = function(){
+            let ns = document.getElementById("ns").value;
+
+            //tao doi tuong ngay sinh (duoc nhap trong o ns) kieu Date
+            let date_ns = new Date(ns);
+
+            //lay nam sinh
+            let namsinh = date_ns.getFullYear();
+            
+            //tao doi tuong Date, chua thoi gian hien tai cua may
+            let today = new Date();
+
+            //tinh tuoi duoc nhap tu o ngay sinh [ns]
+            let tuoi = today.getFullYear()- namsinh;
+
+            if(tuoi<18){
+                alert("Oi gioi oi, e chua 18 tuoi !");
+            }
+            else{
+                alert("troi dat oi, phai gap Duy Anh thoi !!!");
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
