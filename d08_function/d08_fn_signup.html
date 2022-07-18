@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <link rel="stylesheet" href="../css/form.css">
+    <style>
+        .container{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Signup New Member</h2>
+        <hr>
+
+        <form action="" id="form-signup">
+            <div>
+                <label for="">Email</label>
+                <input type="email" name="email" id="email" 
+                    required value="xxx@xxx.com" />
+            </div>
+
+            <div>
+                <label for="">Password</label>
+                <input type="password" name="pass" id="pass"
+                required placeholder="nhap mat khau">
+            </div>
+
+            <div>
+                <label for="">Password Confirm</label>
+                <input type="password" name="pass2" id="pass2"
+                required placeholder="nhap lai mat khau">
+            </div>           
+
+            <div>
+                <label for="">City</label>
+                <select name="city" id="city" required>
+                    <option value=""> Chon thanh pho </option>
+                    <option value="SG">Saigon</option>
+                    <option value="HN">Ha noi</option>
+                    <option value="HU">Hue</option>
+                    <option value="DN">Da nang</option>
+                    <option value="CT">Can tho</option>
+                    <option value="HP">Hai phong</option>
+                    <option value="BD">Binh Duong</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="">Gender</label>
+                <input type="radio" name="gender" id="gMale" checked value="male"> Male
+
+                <input type="radio" name="gender" id="gFemale" value="female"> Female
+
+                <input type="radio" name="gender" id="gOther" value="other"> Other
+            </div>
+
+            <div>
+                <label for="">Hobbies</label>
+                <input type="checkbox" name="hRead" id="hRead" value="reading"> Reading - 
+                <input type="checkbox" name="hCook" id="hCook" value="cooking"> Cooking -    
+                <input type="checkbox" name="hMusic" id="hMusic" value="music"> Music              
+            </div>
+
+            <div>
+                <label for="">Comment</label> <br>
+                <textarea name="comment" id="comment" rows="5" cols="50" placeholder="y kien khac"></textarea>
+            </div>
+
+            <div>
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
