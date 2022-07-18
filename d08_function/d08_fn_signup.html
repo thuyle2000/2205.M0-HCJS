@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,34 +8,32 @@
     <title>register</title>
     <link rel="stylesheet" href="../css/form.css">
     <style>
-        .container{
+        .container {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h2>Signup New Member</h2>
         <hr>
 
-        <form action="" id="form-signup">
+        <form action="../d06_media/d06_video2.html" id="form-signup">
             <div>
                 <label for="">Email</label>
-                <input type="email" name="email" id="email" 
-                    required value="xxx@xxx.com" />
+                <input type="email" name="email" id="email" required value="xxx@xxx.com" />
             </div>
 
             <div>
                 <label for="">Password</label>
-                <input type="password" name="pass" id="pass"
-                required placeholder="nhap mat khau">
+                <input type="password" name="pass" id="pass" required placeholder="nhap mat khau">
             </div>
 
             <div>
                 <label for="">Password Confirm</label>
-                <input type="password" name="pass2" id="pass2"
-                required placeholder="nhap lai mat khau">
-            </div>           
+                <input type="password" name="pass2" id="pass2" required placeholder="nhap lai mat khau">
+            </div>
 
             <div>
                 <label for="">City</label>
@@ -61,9 +60,9 @@
 
             <div>
                 <label for="">Hobbies</label>
-                <input type="checkbox" name="hRead" id="hRead" value="reading"> Reading - 
-                <input type="checkbox" name="hCook" id="hCook" value="cooking"> Cooking -    
-                <input type="checkbox" name="hMusic" id="hMusic" value="music"> Music              
+                <input type="checkbox" name="hRead" id="hRead" value="reading"> Reading -
+                <input type="checkbox" name="hCook" id="hCook" value="cooking"> Cooking -
+                <input type="checkbox" name="hMusic" id="hMusic" value="music"> Music
             </div>
 
             <div>
@@ -77,5 +76,42 @@
             </div>
         </form>
     </div>
+
+    <script>
+        document.getElementById("form-signup").onsubmit = function () {
+
+            //1. kiem tra o nhap email co dung chuan ko?
+            let email = document.getElementById("email").value.trim().toLowerCase();
+
+            //1a. bieu thuc qui tac (regular exp kiem tra email)
+            let r = /([a-z0-9_]+)@([a-z0-9]+)\.([a-z]{2,4})+/; 
+
+            //1b. kiem tra du lieu trong nhap email co khop voi bieu thuc r?
+            if(r.test(email)==false) {
+                alert("Email ko hop le. Vui long nhap lai !!!");
+                document.getElementById("email").focus();
+                return false;
+            }
+            //ket thuc kiem tra o nhap email co dung chuan ko?
+
+
+            //2. kiem tra password va password confirm co giong nhau ko
+            let pass1 = document.getElementById("pass").value.trim();
+            let pass2 = document.getElementById("pass2").value.trim();
+
+            if(pass1!=pass2){
+                alert("Mat khau va Mat Khau nhap lai ko giong nhau ! Vui long nhap lai !");
+                document.getElementById("pass").focus();
+                return false;                
+            }
+
+       }
+
+
+
+    </script>
+
+
 </body>
+
 </html>
