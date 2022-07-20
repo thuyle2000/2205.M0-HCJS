@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js-window</title>
+    <link rel="stylesheet" href="../css/form.css">
+</head>
+
+<body>
+    <h2>Window object demo</h2>
+    <hr>
+    <input type="text" name="user" id="user" placeholder="input your name">
+    <input type="button" value="OK" onclick="fn_ok();">
+    <input type="button" value="Close" onclick="fn_close()">
+
+    <script>
+        function fn_ok() {
+            //lay gia tri nhap trong o [user] -> bien [username]
+            let username = document.getElementById("user").value;
+
+            //open them 1 tab moi trong trinh duyet -> [new_win]
+            let new_win = window.open();
+
+            //trong tab moi, hien thi thong bao 'Hello'
+            // new_win.document.write("<h2>Hello, " + username + "<h2>");
+            new_win.document.write(`<h2>Hello, ${username} <h2>`);
+        }
+
+        function fn_close(){
+            let ans = confirm("Are u sure ?");
+            if(ans == true){
+                window.close();
+            }
+        }
+        
+    </script>
+</body>
+
+</html>
