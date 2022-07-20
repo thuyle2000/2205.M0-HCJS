@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign-up</title>
+    <link rel="stylesheet" href="../css/form.css">
+    <style>
+        .container {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Signup New Member</h2>
+        <hr>
+
+        <form action="../d06_media/d06_video2.html" id="form-signup" name="formDK">
+            <div>
+                <label for="">Email</label>
+                <input type="email" name="email" id="email" required value="xxx@xxx.com" />
+            </div>
+
+            <div>
+                <label for="">Password</label>
+                <input type="password" name="pass" id="pass" required placeholder="nhap mat khau" value="123">
+            </div>
+
+            <div>
+                <label for="">Password Confirm</label>
+                <input type="password" name="pass2" id="pass2" required placeholder="nhap lai mat khau" value="123">
+            </div>
+
+            <div>
+                <label for="">City</label>
+                <select name="city" id="city" required>
+                    <option value=""> Chon thanh pho </option>
+                    <option value="SG" selected>Saigon</option>
+                    <option value="HN">Ha noi</option>
+                    <option value="HU">Hue</option>
+                    <option value="DN">Da nang</option>
+                    <option value="CT">Can tho</option>
+                    <option value="HP">Hai phong</option>
+                    <option value="BD">Binh Duong</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="">Gender</label>
+                <input type="radio" name="gender" id="gMale" checked value="male"> Male
+
+                <input type="radio" name="gender" id="gFemale" value="female"> Female
+
+                <input type="radio" name="gender" id="gOther" value="other"> Other
+            </div>
+
+            <div>
+                <label for="">Hobbies</label>
+                <input type="checkbox" name="hobbies_1" id="hRead" value="reading" checked> Reading -
+                <input type="checkbox" name="hobbies_2" id="hCook" value="cooking"> Cooking -
+                <input type="checkbox" name="hobbies_3" id="hMusic" value="music" checked> Music
+            </div>
+
+            <div>
+                <label for="">Comment</label> <br>
+                <textarea name="comment" id="comment" rows="5" cols="50" placeholder="y kien khac">Nothing</textarea>
+            </div>
+
+            <div>
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </div>
+        </form>
+    </div>
+
+    <script>
+
+        //lap trinh cho su kien bam nut [submit] cua form dang ky
+        document.getElementById("form-signup").onsubmit = function () {
+
+            //1. kiem tra o nhap email co dung chuan ko?
+            let email = document.getElementById("email").value.trim().toLowerCase();
+
+            
+            //1a. bieu thuc qui tac (regular exp kiem tra email)
+            let r = /([a-z0-9_]+)@([a-z0-9]+)\.([a-z]{2,4})+/; 
+
+            //1b. kiem tra du lieu trong nhap email co khop voi bieu thuc r?
+            if(r.test(email)==false) {
+                alert("Email ko hop le. Vui long nhap lai !!!");
+                document.getElementById("email").focus();
+                return false;
+            }
+            //ket thuc kiem tra o nhap email co dung chuan ko?
+
+
+            //2. kiem tra password va password confirm co giong nhau ko
+            let pass1 = document.getElementById("pass").value.trim();
+            let pass2 = document.getElementById("pass2").value.trim();
+
+            if(pass1!=pass2){
+                alert("Mat khau va Mat Khau nhap lai ko giong nhau ! Vui long nhap lai !");
+                document.getElementById("pass").focus();
+                return false;                
+            }
+
+
+            //goi ham hien thi thong tin nhap
+            fn_show();
+
+            return false;
+
+       }
+
+
+
+       //lap trinh cho chuc nang hien thi cac noi dung nhap lieu
+       function fn_show() {
+            //tao 1 mang a[] chua cac noi dung nhap lieu trong form dang ky
+            let a=[];
+
+            //lay cac noi dung trong form dua vo mang a[]
+            a.push(`email = ${formDK.email.value}`);
+            a.push(`city = ${formDK.city.value}`);
+            a.push(`gender = ${formDK.gender.value}`);
+
+            let h = ``;
+            if(formDK.hobbies_1.checked){
+                h += ` ${formDK.hobbies_1.value}`;
+            }
+            if(formDK.hobbies_2.checked){
+                h += ` ${formDK.hobbies_2.value}`;
+            }
+            if(formDK.hobbies_3.checked){
+                h += ` ${formDK.hobbies_3.value}`;
+            }
+            
+            a.push(`hobbies = ${h}`);
+            a.push(`comment = ${formDK.comment.value}`);
+
+            //hien thi thong tin cua mang a[] len hop thoai alert()
+            alert(a.join('\n'));
+
+       }
+
+
+    </script>
+
+
+</body>
+
+</html>
