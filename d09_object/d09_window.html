@@ -18,8 +18,15 @@
 
     <script>
         function fn_ok() {
-            //lay gia tri nhap trong o [user] -> bien [username]
-            let username = document.getElementById("user").value;
+
+            //lay doi tuong co id=[user] -> bien [user]
+            let user = document.getElementById("user");
+
+            //tao bien doi tuong String [username]
+            let username = new String(user.value.trim());
+
+            username = username.length==0?"World":username.toUpperCase();
+
 
             //open them 1 tab moi trong trinh duyet -> [new_win]
             let new_win = window.open();
@@ -35,7 +42,7 @@
                 window.close();
             }
         }
-        
+
     </script>
 </body>
 
