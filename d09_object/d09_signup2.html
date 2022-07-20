@@ -16,7 +16,7 @@
 
 <body>
     <div class="container">
-        <h2>Signup New Member</h2>
+        <h2>Signup New Member - version 2</h2>
         <hr>
 
         <form action="../d06_media/d06_video2.html" id="form-signup" name="formDK">
@@ -129,15 +129,10 @@
             a.push(`gender = ${formDK.gender.value}`);
 
             let h = ``;
-            if(formDK.hobbies_1.checked){
-                h += ` ${formDK.hobbies_1.value}`;
-            }
-            if(formDK.hobbies_2.checked){
-                h += ` ${formDK.hobbies_2.value}`;
-            }
-            if(formDK.hobbies_3.checked){
-                h += ` ${formDK.hobbies_3.value}`;
-            }
+            let cb = document.querySelectorAll('.ab:checked');
+            cb.forEach(element => {
+                h += ` ${element.value}`;
+            });
             
             a.push(`hobbies = ${h}`);
             a.push(`comment = ${formDK.comment.value}`);
@@ -145,13 +140,6 @@
             //hien thi thong tin cua mang a[] len hop thoai alert()
             alert(a.join('\n'));
 
-
-            // let cb = document.querySelectorAll('input[type="checkbox"]:checked');
-            let cb = document.querySelectorAll('.ab:checked');
-            console.log(cb);
-            cb.forEach(element => {
-                console.log(element.value);
-            });
 
        }
 
