@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,20 +8,83 @@
     <title>canvas</title>
     <link rel="stylesheet" href="../css/form.css">
     <style>
-        *{
+        * {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        #kv{
+        #kv {
             border: solid thin brown;
             margin-left: 20px;
             box-shadow: 5px 5px 3px burlywood;
+            float: left;
+        }
+
+        #div-form {
+            background-color: beige;
+            margin-left: 20px;
+            float: left;
+            width: 500px;
         }
     </style>
 </head>
+
 <body>
     <h2>Canvas Demo</h2>
     <hr>
     <canvas width="600" height="600" id="kv"></canvas>
+    <div id="div-form">
+        <h4>Draw Line</h4>
+        <div>
+            <label for="">Input 1st point</label>
+            x1: <input type="number" name="x1" id="x1" value="10" min="0" max="480">
+            - y1: <input type="number" name="y1" id="y1" value="10" min="0" max="480"> <br>
+        </div>
+
+        <div>
+            <label for="">Input 2nd point</label>
+            x2: <input type="number" name="x2" id="x2" value="100" min="0" max="480">
+            - y2: <input type="number" name="y2" id="y2" value="100" min="0" max="480"> <br>
+        </div>
+
+        <div>
+            <label for="">Choose Color</label>
+            <input type="color" name="color" id="color" value="#0000FF">
+        </div>
+        <hr>
+        <div>
+            <input type="button" value="Draw" name="btOK" id="btOK">
+        </div>
+
+    </div>
+
+    <script>
+        //lay context cua khung ve
+        let context = document.getElementById("kv").getContext("2d");
+
+        //lap trinh cho su kien click cua button co id="btOK"
+        document.getElementById("btOK").onclick = function () {
+            //lay cac tri (x1,y1) (x2,y2) va mau ve duong thang
+
+            //lay cac tri (x1,y1)
+            let x1 = document.getElementById("x1").value;
+            let y1 = document.getElementById("y1").value;
+
+            //lay cac tri (x2,y2)
+            let x2 = document.getElementById("x2").value;
+            let y2 = document.getElementById("y2").value;
+
+            //lay mau ve 
+            let color = document.getElementById("color").value;
+
+            //bat dau ve duong thang
+            context.beginPath();
+            context.moveTo(x1,y1);
+            context.lineTo(x2,y2);
+            context.strokeStyle=color;
+            context.stroke();
+        }
+
+    </script>
 </body>
+
 </html>
