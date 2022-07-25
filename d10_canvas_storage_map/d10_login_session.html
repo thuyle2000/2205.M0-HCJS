@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login-session</title>
+    <link rel="stylesheet" href="../css/form.css">
+</head>
+
+<body>
+    <div>
+        <h2>HTML5 Session storage Demo</h2>
+        <hr>
+
+        <form action="d10_canvas_image_text.html" name="formLOGIN" id="formLOGIN">
+            <fieldset>
+                <legend>Login</legend>
+                <div>
+                    <label for="">username: </label>
+                    <input type="text" name="user" id="user" required autofocus placeholder="nhap username" value="abc">
+                </div>
+
+                <div>
+                    <label for="">password:</label>
+                    <input type="password" name="pass" id="pass" required placeholder="nhap mat khau [Pxxx]" value="123"
+                        >
+                </div>
+
+                <input type="submit" value="Get Go !">
+                <input type="reset" value="Reset">
+                <input type="button" value="Register" onclick="fn_register()">
+            </fieldset>
+        </form>
+
+    </div>
+
+    <script>
+        //lap trinh ham fn_register()
+        function fn_register(){
+
+        }
+
+
+
+        //lap trinh cho su kien submit form login
+        document.getElementById("formLOGIN").onsubmit= function(e){
+            //lay gia tri nhap trong o username
+            let uid = document.getElementById("user").value.trim(); // "  abc " -> "abc"
+
+            if(uid.length == 0){
+                alert("username ko duoc de trong, vui long nhap lai !");
+                document.getElementById("user").focus();
+                return false;   //tat chuc nang submit: ko chuyen trang action 
+            }
+
+            //lay gia tri nhap trong o password
+            let pwd = document.getElementById("pass").value.trim();
+
+
+            //kiem tra tai khoan dang nhap co hop le ko        
+            if(sessionStorage["account"]){
+                let acc = JSON.parse(sessionStorage["account"]);
+
+                if (acc.uid != uid  || acc.pwd != pwd){
+                    alert (" Invalid account, try again !!!");
+                    return false;
+                }
+            }
+            else{
+                alert("Plz signup now !");
+                frm = document.getElementById("formLOGIN");
+                frm.action = "d10_register.html";
+            }
+
+            
+        };
+
+    </script>
+</body>
+
+</html>

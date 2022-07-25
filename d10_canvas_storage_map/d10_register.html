@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <link rel="stylesheet" href="../css/form.css">
+</head>
+<body>
+    <h2>Register new Member</h2>
+    <hr>
+    <form action="d10_login_session.html" name="formREG" id="formREG">
+        <fieldset>
+            <legend>Signup</legend>
+            <div>
+                <label for="">username: </label>
+                <input type="text" name="user" id="user" required autofocus placeholder="nhap username" value="tuananh">
+            </div>
+
+            <div>
+                <label for="">password:</label>
+                <input type="password" name="pass" id="pass" required placeholder="nhap mat khau" value="1123">
+            </div>
+
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </fieldset>
+    </form>
+
+    <script>
+        //lap trinh cho su kien submit cua form dang ky, co id="formREG"
+        document.getElementById("formREG").onsubmit= function(){
+            let user = document.getElementById("user").value.trim();
+            let pass = document.getElementById("pass").value.trim();
+
+            //tao bien session de luu tk moi
+            let acc = {'uid':user, 'pwd':pass}; // bo du lieu json
+            
+            sessionStorage.setItem('account', JSON.stringify(acc));
+
+            //xem gia tri cua bien sessionStorage
+            console.log("acc = " +sessionStorage["account"]);
+
+            // return false;
+
+        }
+    </script>
+</body>
+</html>
