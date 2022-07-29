@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>geolocation</title>
+    <link rel="stylesheet" href="../css/form.css">
+</head>
+<body>
+    <h2>Geolocation API Demo</h2>
+    <hr>
+    <input type="button" value="Get Location" id="btnOK">
+    <p id="loc"></p>
+
+    <script>
+        //lap trinh cho su kien click vo nut co id=[btnOK]
+        document.getElementById("btnOK").onclick = function(){
+            if(navigator.geolocation){
+                // goi ham show vi tri toa do cua thiet bi
+                navigator.geolocation.getCurrentPosition(show);
+            }
+            else{
+                document.getElementById("loc").innerHTML = "Ko duoc phep su dung tinh nang Location !";
+            }
+        }
+
+        //ham show vi tri toa do cua thiet bi dang duyet web
+        function show(position){
+            let x = position.coords.latitude;
+            let y = position.coords.longitude;
+
+            document.getElementById("loc").innerHTML = `<b>latitude (vi do):</b> ${x}, <b>longitude (kinh do):</b> ${y}`;
+        }
+    </script>
+</body>
+</html>
