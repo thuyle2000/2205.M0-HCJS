@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>home</title>
+    <title>sign-up</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <style>
         header,
@@ -13,7 +13,7 @@
             text-align: center;
         }
 
-        .about{
+        .about {
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
             font-size: 1.5rem;
             font-style: italic;
@@ -46,8 +46,62 @@
 
         <!-- main content -->
         <section>
-            <h3>Sign-up</h3>
+            <div class="row">
+                <div class="offset-3 col-md-6">
+                    <h3>Sign-up</h3>
+                    <form action="" name="form-sign-up" id="form-sign-up">
+                        <div class="form-group">
+                            <label for="">name</label>
+                            <input type="text" class="form-control" name="name" id="name" value="vinh phuoc">
+                        </div>
 
+                        <div class="form-check form-check-inline">
+                            gender:
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="gender" id="r-male" value="male"
+                                    checked> male
+                            </label>
+
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="gender" id="r-female" value="female">
+                                female
+                            </label>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="">address</label>
+                            <input type="text" class="form-control" name="address" id="address"
+                                value="590 CMT8 Q3, TP HCM">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">email</label>
+                            <input type="email" class="form-control" name="email" id="email" value="phuoc@gmail.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">phone</label>
+                            <input type="text" class="form-control" name="phone" id="phone" value="123-12345">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">qualification</label>
+
+                            <select name="qua" id="qua" class="form-control">
+                                <option value="Bachelor degree">Bachelor degree</option>
+                                <option value="Master">Master</option>
+                                <option value="PhD">PhD</option>
+                                <option value="None">None</option>
+                            </select>
+                        </div>
+                        <div>
+                            <input type="submit" value="submit" class="btn btn-danger">
+                            <input type="reset" value="reset" class="btn btn-info">
+                        </div>
+                    </form>
+                </div>
+            </div>
         </section>
 
         <!-- tieu de chan -->
@@ -55,8 +109,38 @@
             2019 ABC School. All rights reserved.
         </footer>
 
-
     </div>
+
+    <script>
+        document.getElementById("form-sign-up").onsubmit = function (e) {
+            e.preventDefault(); // huy hieu ung submit (ko load trang action)
+
+            //lay du lieu nhap trong cac o input, dat vo mang a[]
+            let a = [];
+            let name = document.getElementById("name").value;
+            a.push(`ho ten: ${name}`);
+
+            let gender = document.getElementById("r-male").checked ? "nam" : "nu";
+            a.push(`gioi tinh: ${gender}`);
+
+            let address = document.getElementById("address").value;
+            a.push(`dia chi: ${address}`);
+
+            let email = document.getElementById("email").value;
+            a.push(`email: ${email}`);
+
+            let phone = document.getElementById("phone").value;
+            a.push(`so dien thoai: ${phone}`);
+
+            //xuat thong tin dang ky tom tat len hop thong bao alert
+            alert(a.join("\n"));
+
+            let new_window = window.open();
+            new_window.document.write("<pre>");
+            new_window.document.writeln(a.join("<br>"));
+            new_window.document.write("</pre>");
+        }
+    </script>
 </body>
 
 </html>
